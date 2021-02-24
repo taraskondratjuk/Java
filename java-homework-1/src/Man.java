@@ -30,7 +30,7 @@ public class Man {
         this.age = age;
         this.city = city;
         this.woman = new Woman(womanName, womanAge, womanProfession, womanCity);
-        this.car = new Car(carMark, carModel, carYear, carPrice, new Engine( numberOfCylinders,  type,  volume,  power));
+        this.car = new Car(carMark, carModel, carYear, carPrice, new Engine(numberOfCylinders, type, volume, power));
 
     }
 
@@ -76,7 +76,11 @@ public class Man {
     }
 
     public void setCar(String mark, String model, int year, int price, Engine engine) {
-        this.car = new Car(mark, model, year, price,engine);
+        this.car = new Car(mark, model, year, price, engine);
+    }
+
+    public void setCar(String mark, String model, int year, int price, int numberOfCylinders, String type, double volume, int power) {
+        this.car = new Car(mark, model, year, price, new Engine(numberOfCylinders, type, volume, power));
     }
 
     public Car getCar(Car car) {

@@ -13,6 +13,8 @@ public class Main {
         System.out.println(nazar);
         nazar.setWoman("Svitlana", 24, "Seller", "Kyiv");
         System.out.println(nazar);
+        taras.setCar("BMW","525",2012,15500,6,"benzun",3.0,175);
+        System.out.println(taras);
 
     }
 }
