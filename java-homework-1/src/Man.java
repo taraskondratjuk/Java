@@ -16,14 +16,24 @@ public class Man {
         this.car = car;
     }
 
-    public Man(String name, int age, String city, String womanName, int womanAge, String womanProfession, String womanCity, String carMark, String carModel, int carYear, int carPrice) {
+    public Man(String name, int age, String city, String womanName, int womanAge, String womanProfession, String womanCity, String carMark, String carModel, int carYear, int carPrice, Engine engine) {
         this.name = name;
         this.age = age;
         this.city = city;
         this.woman = new Woman(womanName, womanAge, womanProfession, womanCity);
-        this.car = new Car(carMark, carModel, carYear, carPrice);
+        this.car = new Car(carMark, carModel, carYear, carPrice, engine);
 
     }
+
+    public Man(String name, int age, String city, String womanName, int womanAge, String womanProfession, String womanCity, String carMark, String carModel, int carYear, int carPrice, int numberOfCylinders, String type, double volume, int power) {
+        this.name = name;
+        this.age = age;
+        this.city = city;
+        this.woman = new Woman(womanName, womanAge, womanProfession, womanCity);
+        this.car = new Car(carMark, carModel, carYear, carPrice, new Engine( numberOfCylinders,  type,  volume,  power));
+
+    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -65,8 +75,8 @@ public class Man {
         this.car = car;
     }
 
-    public void setCar(String mark, String model, int year, int price) {
-        this.car = new Car(mark, model, year, price);
+    public void setCar(String mark, String model, int year, int price, Engine engine) {
+        this.car = new Car(mark, model, year, price,engine);
     }
 
     public Car getCar(Car car) {
