@@ -7,8 +7,6 @@ public class Shirt extends Clothe implements MensClothes, WomenClothes {
         super(size, price, color);
     }
 
-
-
     @Override
     public void getDressedMan() {
 

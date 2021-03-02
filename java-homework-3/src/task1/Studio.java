@@ -9,23 +9,26 @@ public class Studio {
         this.clothes = clothes;
     }
 
-    public Clothe mensChoice() {
-        for (Clothe item : clothes) {
-            if (item instanceof MensClothes) {
-                return item;
+    public Clothe[] mensChoice() {
+        Clothe [] chosenMan= new Clothe[clothes.length];
+        for (int i=0;i<clothes.length;i++) {
+            if (clothes[i] instanceof MensClothes) {
+                chosenMan[i]=clothes[i];
             }
         }
-        return null;
+        return chosenMan;
     }
 
-    public Clothe womenChoice() {
-        for (Clothe item : clothes) {
-            if (item instanceof WomenClothes) {
-                return item;
+    public Clothe[] womenChoice() {
+        Clothe [] chosenWoman= new Clothe[clothes.length];
+        for (int i=0;i<clothes.length;i++) {
+            if (clothes[i] instanceof WomenClothes) {
+                chosenWoman[i]=clothes[i];
             }
         }
-        return null;
+        return chosenWoman;
     }
+
 
     public Clothe[] getClothes() {
         return clothes;

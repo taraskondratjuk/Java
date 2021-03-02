@@ -14,12 +14,18 @@ public class Main {
         clothes[3] = tie;
 
 
-
         Studio studio = new Studio(clothes);
 
-        System.out.println(studio.womenChoice());
+        Clothe[] mensClothes=studio.mensChoice();
 
+        Clothe[] womenClothes=studio.womenChoice();
 
+//        for (Clothe item :mensClothes){
+//            System.out.println(item);
+//        }
 
+        for (Clothe item :womenClothes){
+            System.out.println(item);
+        }
     }
 }
