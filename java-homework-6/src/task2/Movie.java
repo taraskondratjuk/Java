@@ -32,9 +32,7 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie(" +
-                "Назва фільму : '" + title + '\'' +
-                ", Тривалість фільму : " + duration +
-                ')';
+        return "Назва фільму : '" + title + '\'' +
+                ", Тривалість фільму : " + duration;
     }
 }
