@@ -7,13 +7,14 @@ import java.util.TreeSet;
 public class Schedule {
     Set<Seance> seances;
 
-
-    public Schedule(Set<Seance> seances) {
-        this.seances = new TreeSet<Seance>();
-    }
-
     public Schedule() {
     }
+
+    public Schedule(TreeSet<Seance> seances) {
+        this.seances = seances;
+    }
+
+
 
     public Set<Seance> getSeances() {
         return seances;
@@ -24,13 +25,12 @@ public class Schedule {
     }
 
     public void addSeance(Seance seance) {
-        this.seances.add(seance);
+        seances.add(seance);
     }
 
     public void removeSeance(Seance seance) {
-        this.seances.remove(seance);
+        seances.remove(seance);
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -48,8 +48,6 @@ public class Schedule {
 
     @Override
     public String toString() {
-        return "Schedule{" +
-                "seances=" + seances +
-                '}';
+        return  seances+"";
     }
 }

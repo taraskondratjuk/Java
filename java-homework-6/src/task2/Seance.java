@@ -54,18 +54,17 @@ public class Seance implements Comparable<Seance> {
 
     @Override
     public String toString() {
-        return "Seance{" + movie +
+        return "["+movie +
                 ", Початок сеансу о " + startTime +
-                ", Кінець сеансу о " + endTime +
-                '}';
+                ", Кінець сеансу о " + endTime+"]";
     }
 
     @Override
     public int compareTo(Seance obj) {
         if (obj.startTime.getHour() == this.startTime.getHour()) {
-            return obj.startTime.getMin() - this.startTime.getMin();
+            return this.startTime.getMin() - obj.startTime.getMin();
         } else {
-            return obj.startTime.getHour() - this.startTime.getHour();
+            return this.startTime.getHour() - obj.startTime.getHour();
         }
     }
 }
