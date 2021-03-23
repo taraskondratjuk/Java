@@ -1,0 +1,56 @@
+<div class="editForm">
+  <form #myForm="ngForm" (ngSubmit)="save(myForm) " [style.display]="isSaveFormVisible" >
+
+    <label>
+      Mark :
+      <input type="text" name="mark" [(ngModel)]="car.mark">
+    </label>
+
+    <label>
+      Model :
+      <input type="text" name="model" [(ngModel)]="car.model">
+    </label>
+
+    <label>
+      Price :
+      <input type="number" name="price" [(ngModel)]="car.price">
+    </label>
+
+    <button>Save</button>
+
+  </form>
+
+
+</div>
+
+
+<div class="saveForm">
+  <form #myForm="ngForm" (ngSubmit)="saveEditedCar(myForm)" [style.display]="isEditFormVisible" >
+
+    <label>
+      Mark :
+      <input type="text" name="mark" [(ngModel)]="car.mark" value="{{editedCar?.mark}}">
+    </label>
+
+    <label>
+      Model :
+      <input type="text" name="model" [(ngModel)]="car.model" value="{{editedCar?.model}}">
+    </label>
+
+    <label>
+      Price :
+      <input type="number" name="price" [(ngModel)]="car.price" value="{{editedCar?.price}}">
+    </label>
+
+    <button (click)="hideEditBlock()">Save Changes</button>
+
+  </form>
+
+</div>
+
+
+<app-car *ngFor="let car of cars" [car]="car" (deletedCarUp)="deleteCar($event)"
+         (editedCarUp)="editCar($event)"></app-car>
+
+
+
